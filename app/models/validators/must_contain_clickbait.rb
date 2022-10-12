@@ -2,7 +2,7 @@ class MustContainClickbait < ActiveModel::Validator
     #My answer works in rails c but doesnt pass rspec
     
     def validate(record)
-        unless record.title.match?(/Won't Believe|Secret|Top \d|Guess/i) #Regexp.union(patterns)
+        unless record.title.match?(/Won't Believe|Secret|Top \d|Guess/i) 
             record.errors.add(:title, "is not click baity enough!!!!")
         end
     end
