@@ -1,11 +1,9 @@
 class Post < ApplicationRecord
-    validates_with MustContainClickbait
-
-
     validates :title, presence: true, exclusion: {in: %w(True Facts)}
     validates :content, length: {minimum: 250}
     validates :summary, length: {maximum: 250}
     validates :category, inclusion: {in: %w(Fiction Non-Fiction), message: "is not included in the list" }
+    validates_with MustContainClickbait
     
 
     # def must_contain_clickbait
